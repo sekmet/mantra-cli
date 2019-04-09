@@ -1,34 +1,34 @@
-# Mantra CLI
+# Mantra Recompose CLI
 
-[![Build Status](https://travis-ci.org/mantrajs/mantra-cli.svg?branch=master)](https://travis-ci.org/mantrajs/mantra-cli)
+[![Build Status](https://travis-ci.org/mantrajs/mantrarecom-cli.svg?branch=master)](https://travis-ci.org/mantrajs/mantrarecom-cli)
 
 A command line interface for developing Meteor apps using [Mantra](https://github.com/kadirahq/mantra).
 
 
 ## Installation
 
-    npm install -g mantra-cli
+    npm install -g mantrarecom-cli
 
-See [RELEASE NOTE](https://github.com/mantrajs/mantra-cli/blob/master/RELEASE_NOTE.md)
+See [RELEASE NOTE](https://github.com/mantrajs/mantrarecom-cli/blob/master/RELEASE_NOTE.md)
 if you are upgrading and wondering what has changed in the latest version.
 
 **Meteor version 1.3 or higher** needs to be present in your machine to create
-and run apps with mantra-cli.
+and run apps with mantrarecom-cli.
 
 
 ## Documentation
 
 The available commands are:
 
-* [create](https://github.com/mantrajs/mantra-cli#mantra-create-path)
-* [generate](https://github.com/mantrajs/mantra-cli#mantra-generate-type-name)
-* [destroy](https://github.com/mantrajs/mantra-cli#mantra-destroy-type-name)
+* [create](https://github.com/mantrajs/mantrarecom-cli#mantra-create-path)
+* [generate](https://github.com/mantrajs/mantrarecom-cli#mantra-generate-type-name)
+* [destroy](https://github.com/mantrajs/mantrarecom-cli#mantra-destroy-type-name)
 
 Currently, CLI expects you to be in the app root directory.
 
 ---------------------------------------
 
-### mantra create [path]
+### mantrarecom create [path]
 *alias: c*
 
 Create a Meteor application using Mantra spec under `path`.
@@ -53,7 +53,7 @@ Create storybook files, and save the configuration to the generated `mantra_cli.
 
 ---------------------------------------
 
-### mantra generate [type] [name]
+### mantrarecom generate [type] [name]
 *alias: g*
 
 Generate a file of `type` and name specified `name`.
@@ -68,9 +68,9 @@ Possible values are:
 By default, a stateless component is generated. By using `--use-class` option
 (alias `-c`), you can generate a ES2015 class extending `React.Component`.
 
-    mantra g component core:user_list -c
+    mantrarecom g component core:user_list -c
 
-Mantra-cli can also generate a [storybook](https://github.com/kadirahq/react-storybook)-file for each component. See the [configuration section](https://github.com/mantrajs/mantra-cli#storybooks) for more info.
+Mantra Recompose-CLI can also generate a [storybook](https://github.com/kadirahq/react-storybook)-file for each component. See the [configuration section](https://github.com/mantrajs/mantrarecom-cli#storybooks) for more info.
 
 
 * `container`
@@ -82,7 +82,7 @@ Generates a `container` and its corresponding `component`.
 Use `--schema` option (alias `-s`) to specify the schema solution to use for
 your Mongo collections. Currently, you can specify `collection2`, and `astronomy`.
 
-    mantra g collection books -s collection2
+    mantrarecom g collection books -s collection2
 
 * `method`
 * `publication`
@@ -99,9 +99,9 @@ on the client side, and all files of those types belong to a module.
 
 *Example*
 
-    mantra generate component core:posts
-    mantra generate publication users
-    mantra generate method comments
+    mantrarecom generate component core:posts
+    mantrarecom generate publication users
+    mantrarecom generate method comments
 
 **Automatic update to index.js**
 
@@ -110,19 +110,19 @@ inserts `import` and `export` statements to the relevant `index.js` file.
 
 ---------------------------------------
 
-### mantra destroy [type] [name]
+### mantrarecom destroy [type] [name]
 *alias: d*
 
 **This command removes files.**
 
-Destroys all files that its counterpart `mantra generate` command would generate.
+Destroys all files that its counterpart `mantrarecom generate` command would generate.
 You can provide all `types` supported by the `generate` command.
 
 ---------------------------------------
 
 ## Customization
 
-Mantra-CLI allows you to easily customize its behaviors. Currently, you can
+Mantra Recompose-CLI allows you to easily customize its behaviors. Currently, you can
 customize:
 
 * tab size
@@ -130,7 +130,7 @@ customize:
 * generateComponentTests (true)
 * generateContainerTests (true)
 
-You may customize Mantra-CLI by editing `mantra_cli.yaml` on the root directory
+You may customize Mantra Recompose-CLI by editing `mantra_cli.yaml` on the root directory
 of your project. Please open an issue with suggestions for more customization.
 
 The configuration is designed to be similar to [mantrajs-atom-package]
@@ -220,14 +220,6 @@ storybook: true
 ```
 
 ---------------------------------------
-
-## Upgrade Guide
-
-#### Upgrading to 0.4.x
-
-* From `0.4.0`, `mantra-cli.yml` was added. If you are upgrading from `0.3.x`,
-simply create `mantra-cli.yml` file in your project root and start customizing
-following the documentation above.
 
 ## Contributor Guide
 
